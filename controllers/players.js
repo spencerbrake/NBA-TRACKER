@@ -10,7 +10,7 @@ module.exports = {
 
 
 function index(req, res) {
-    Player.find({}, function(err, players){
+    Player.find({user: req.user}, function(err, players){
         console.log(err, players)
         res.render('players/index', { players:players });
     });
@@ -21,5 +21,11 @@ function newPlayer(req, res) {
 }
 
 function create(req, res) {
-    
+    console.log(req.body, req.user)
+    const player = new Player(req.body);
+    player.save(function(err) {
+        if (err) return res.redirect('/players');
+        console.log(err);
+        res.render(`/players`);
+    });
 }
