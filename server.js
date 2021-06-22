@@ -19,6 +19,7 @@ require('./config/database');
 require('./config/passport');
 
 const indexRouter = require('./routes/index')
+const playerRouter = require('./routes/players')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // mount the session middleware
 app.use(session({
-  secret: 'SEI Rocks!',
+  secret: 'Spencer Rocks',
   resave: false,
   saveUninitialized: true
 }));
@@ -50,6 +51,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
+app.use('/players', playerRouter)
 
 
 // invalid request, send 404 page

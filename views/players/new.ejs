@@ -1,0 +1,13 @@
+<%- include('../partials/header') %> 
+
+<form id="new-form" action="/players" method="POST">
+    <label>Name:</label>
+    <input type="text" name="playerName">
+    <label>Teams:</label>
+    <input type='text' name='playerTeams'>
+    <label>Rings</label>
+    <input type='text' name='playerRings'>
+    <label>Active</label>
+    <input type='checkbox' name='activePlayer'>
+    <input type="submit" value="ADD PLAYER">
+  </form>

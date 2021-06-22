@@ -17,7 +17,7 @@ function(accessToken, refreshToken, profile, cb) {
     } else {
       // we have a new student via OAuth!
       var newUser = new User({
-        name: profile.displayName,
+        name: profile.name,
         email: profile.emails[0].value,
         googleId: profile.id
       });
