@@ -19,7 +19,7 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect : '/players', // where do you want the client to go after you login 
-    failureRedirect : '/' // where do you want the client to go if login fails
+    failureRedirect : '/players' // where do you want the client to go if login fails
   }
 ));
 
