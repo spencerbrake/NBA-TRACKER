@@ -4,7 +4,8 @@ console.log(Player)
 module.exports = {
     index,
     create,
-    new: newPlayer
+    new: newPlayer,
+    show
 
 };
 
@@ -21,11 +22,17 @@ function newPlayer(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.body, req.user)
+    req.body.activePlayer = !!req.body.activePlayer;
     const player = new Player(req.body);
+    player.user = req.user;
     player.save(function(err) {
-        if (err) return res.redirect('/players');
+        console.log(player)
+        if (err) return res.redirect('/players/new');
         console.log(err);
-        res.render(`/players`);
+        res.redirect(`/players`);
     });
+}
+
+function show(req, res){
+
 }

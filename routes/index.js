@@ -3,7 +3,7 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.render('/players');
+  res.redirect('/players');
   // Where do you want to go for the root route
   // in the student demo this was res.redirect('/students'), what do you want?
 });
