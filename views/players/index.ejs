@@ -14,7 +14,7 @@
           <% players.forEach(function(p) { %>
               <tr>
                   <td><%= p.name %></td>
-                  <td><%= p.playerRings %></td>
+                  <td><%= p.rings %></td>
                   <td><%= p.activePlayer ? 'Yes' : 'Nope' %></td>
                   <td><a href="/players/<%= p._id %>">DETAILS</a></td>
               </tr>

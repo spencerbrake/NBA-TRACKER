@@ -22,11 +22,13 @@ function newPlayer(req, res) {
 }
 
 function create(req, res) {
-    req.body.activePlayer = !!req.body.activePlayer;
+    req.body.activePlayer = !!req.body.activePlayer
+    req.body.user = req.user
     const player = new Player(req.body);
-    player.save({user: req.user}, function(err) {
-        console.log(player)
-        if (err) return res.redirect('/players/new');
+    player.save(function(err) {
+        console.log(err)
+        console.log(player, "<-- this is player")
+        if (err) return res.redirect('/players');
         console.log(err);
         res.redirect(`/players`);
     });

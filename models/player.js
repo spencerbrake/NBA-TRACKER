@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-    _id: Number,
     content: String,
     rating: {type: Number, min: 1, max: 100, default: 60},
     user: {type: Schema.Types.ObjectId, ref: 'User'}
@@ -11,7 +10,6 @@ const commentSchema = new Schema({
 });
 
 const playerSchema = new Schema({
-    _id: Number,
     name: {
         type: String,
         required: true
