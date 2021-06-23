@@ -5,7 +5,7 @@ console.log(playersCtrl)
 
 router.get('/', playersCtrl.index);
 router.get('/new', playersCtrl.new);
-// router.get('/:id', playersCtrl.show);
+router.get('/:id', playersCtrl.show);
 router.post('/', playersCtrl.create);
 
 

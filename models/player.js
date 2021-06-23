@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
     content: String,
-    rating: {type: Number, min: 1, max: 100, default: 60},
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
     timestamps: true

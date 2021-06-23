@@ -7,19 +7,15 @@
   <link rel='stylesheet' href='/public/stylesheets/style.css' />
 </head>
 <body>
-  <nav>
-    <a href='/players/new'>ADD PLAYER</a>
-    <a href='/players'>ALL PLAYERS</a>
-    <ul>
-      <li>
-        <% if (user) { %>
-          <a href='/logout'>Log Out</a>
-          <% } else { %>
-            <a href='/auth/google'>Login With Google</a>
-            <% } %>
-        
-        
-      </li>
-    </ul>
-  </nav>
+  <ul class='navigation'>
+    <li><a href='/players/new'>ADD PLAYER</a></li>
+    <li><a href='/players'>ALL PLAYERS</a></li>
+    <li>
+      <% if (user) { %>
+        <a href='/logout'>Log Out</a>
+      <% } else { %>
+        <a href='/auth/google'>Login With Google</a>
+        <% } %>
+     </li>
+  </ul>
   <main>

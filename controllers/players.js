@@ -30,10 +30,16 @@ function create(req, res) {
         console.log(player, "<-- this is player")
         if (err) return res.redirect('/players');
         console.log(err);
-        res.redirect(`/players`);
+        res.redirect(`/players/${player._id}`);
     });
 }
 
 function show(req, res){
+    req.body.user = req.user
+    Player.findById(req.params.id).exec(function(err, players){
+        res.render('players/show', {
+            players: players
+        });
+    });
 
 }

@@ -2,23 +2,18 @@
 
 <section>
   <div>Name: </div>
-  <div><%= p.name %></div>
+  <div><%= players.name %></div>
   <div>Rings: </div>
-  <div><%= p.rings %></div>
+  <div><%= players.rings %></div>
   <div>Teams: </div>
-  <div><%= p.teams %></div>
+  <div><%= players.teams %></div>
   <div>Active: </div>
-  <div><%= p.activePlayer ? 'Yes' : 'Nope' %></div>
+  <div><%= players.activePlayer ? 'Yes' : 'No' %></div>
 </section>
 
 <br><br>
 <h2>Comments</h2>
-<form id="add-comment-form" method="POST" action="/players/<%= p._id %>/comments">
-  <label>Comment:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option min=1 max=100></option>
-  </select>
-  <input type="submit" value="Add Comment">
+<form id="add-comment-form" method="POST" action="/players/<%= players._id %>/comments">
+  <input name='content'>
+  <button type="submit">ADD COMMENT</button>
 </form>
