@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/players/<%= players.id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= players.name %> ">
+    <label>Teams:</label>
+    <input type='text' name='teams' value="<%= players.teams %> ">
+    <label>Rings</label>
+    <input type='text' name='rings' value="<%= players.rings %> ">
+    <label>Active</label>
+    <input type='checkbox' name='activePlayer' value="<%= players.activePlayer %> ">
+    <button type="submit">SAVE PLAYER</button>
+  </form>

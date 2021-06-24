@@ -1,23 +1,24 @@
 const Player = require('../models/player');
-console.log(Player)
 
 module.exports = {
     index,
     create,
     new: newPlayer,
     show,
-    delete: deletePlayer
+    delete: deletePlayer,
+    edit,
+    update
 };
 
 
 function index(req, res) {
     Player.find({user: req.user}, function(err, players){
-        console.log(err, players)
         res.render('players/index', { players:players });
     });
 }
 
 function newPlayer(req, res) {
+    req.body.user = req.user
     res.render('players/new')
 }
 
@@ -26,10 +27,7 @@ function create(req, res) {
     req.body.user = req.user
     const player = new Player(req.body);
     player.save(function(err) {
-        console.log(err)
-        console.log(player, "<-- this is player")
         if (err) return res.redirect('/players');
-        console.log(err);
         res.redirect(`/players/${player._id}`);
     });
 }
@@ -50,4 +48,21 @@ function deletePlayer(req, res) {
             res.redirect('/players')
         }
     );
+}
+
+function edit(req, res) {
+    Player.findById(req.params.id, function(err, players){
+        if (err) {
+            res.send(err);
+        } else {
+            res.render('players/edit', { players: players});
+        }
+    });
+}
+
+function update(req, res) {
+    Player.findByIdAndUpdate(req.params.id, req.body, {new: true},
+        function(err, players){
+        });
+        res.redirect(`/players/${req.params.id}`);
 }

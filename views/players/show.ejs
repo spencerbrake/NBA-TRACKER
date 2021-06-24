@@ -9,6 +9,7 @@
   <div><%= players.teams %></div>
   <div>Active: </div>
   <div><%= players.activePlayer ? 'Yes' : 'No' %></div>
+  <a href="/players/<%= players.id %>/edit">Edit Player</a><br>
 </section>
 
 <% if (players.comments.length) { %>
