@@ -7,6 +7,7 @@ router.get('/', playersCtrl.index);
 router.get('/new', playersCtrl.new);
 router.get('/:id', playersCtrl.show);
 router.post('/', playersCtrl.create);
+router.delete('/:id', playersCtrl.delete);
 
 
 module.exports = router;

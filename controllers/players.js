@@ -5,8 +5,8 @@ module.exports = {
     index,
     create,
     new: newPlayer,
-    show
-
+    show,
+    delete: deletePlayer
 };
 
 
@@ -42,4 +42,12 @@ function show(req, res){
         });
     });
 
+}
+
+function deletePlayer(req, res) {
+    Player.deleteOne(
+        {_id: req.params.id, user: req.user._id}, function(err) {
+            res.redirect('/players')
+        }
+    );
 }
