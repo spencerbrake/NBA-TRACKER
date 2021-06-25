@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
-<body>
-  <h1>BALLERS LIST</h1>
+
+
+<body class="index">
   <table id='list'>
       <thead>
           <tr>
               <th>Name</th>
+              <th>Teams</th>
               <th>Rings</th>
               <th>Active</th>
               <th>Details</th>
@@ -15,10 +17,11 @@
           <% players.forEach(function(p) { %>
               <tr>
                   <td><%= p.name %></td>
+                  <td><%= p.teams %></td>
                   <td><%= p.rings %></td>
                   <td><%= p.activePlayer ? 'Yes' : 'Nope' %></td>
-                  <td><a href="/players/<%= p._id %>">DETAILS</a></td>
-                  <td><form action="/players/<%= p.id %>?_method=DELETE"
+                  <td><button><a href="/players/<%= p._id %>">DETAILS</a></button></td>
+                  <td><form action="/players/<%= p._id %>?_method=DELETE"
                     class="delete-player" method="POST">
                     <button type="submit">X</button></td>
               </tr>

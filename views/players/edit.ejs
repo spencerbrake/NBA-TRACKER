@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+
 <form id="new-form" action="/players/<%= players.id %>?_method=PUT" method="POST">
     <label>Name:</label>
     <input type="text" name="name" value="<%= players.name %> ">

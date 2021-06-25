@@ -1,0 +1,127 @@
+body {
+    background: #fff url(/images/nba-background.jpg) center center/cover no-repeat fixed;
+    color: #f8f8f8;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    padding: 5px;
+    text-align: center;
+    background: #C9082A;
+    border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+    background: #17408B;
+    border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comments {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#list {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#new-form {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+}
+
+input[type=button], input[type=submit] {
+    background-color: #17408B;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .show {
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+    border: 5px solid white;
+  }
+  
+
+
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0; 
+    background: #17408B;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .login {
+    margin-left: auto;
+    order: 2;
+  }
+
+  .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: larger;
+      padding-left: 155px;
+      margin: auto;
+  }
+  
+  
+  .navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+  }
+  
+  .navigation a:hover {
+    background: #C9082A;
+  }
+  
+  @media all and (max-width: 800px) {
+    .navigation {
+      justify-content: space-around;
+    }
+  }
+  
+  @media all and (max-width: 600px) {
+    .navigation {
+      flex-flow: column wrap;
+      padding: 0;
+    }
+    .navigation a { 
+      text-align: center; 
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255,0.3); 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+    .navigation li:last-of-type a {
+      border-bottom: none;
+    }
+  }

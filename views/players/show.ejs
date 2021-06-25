@@ -1,19 +1,16 @@
 <%- include('../partials/header') %> 
 
-<section>
-  <div>Name: </div>
-  <div><%= players.name %></div>
-  <div>Rings: </div>
-  <div><%= players.rings %></div>
-  <div>Teams: </div>
-  <div><%= players.teams %></div>
-  <div>Active: </div>
-  <div><%= players.activePlayer ? 'Yes' : 'No' %></div>
-  <a href="/players/<%= players.id %>/edit">Edit Player</a><br>
+
+<section class="show">
+  <div>Name: <%= players.name %> </div>
+  <div>Rings: <%= players.rings %> </div>
+  <div>Teams: <%= players.teams %></div>
+  <div>Active: <%= players.activePlayer ? 'Yes' : 'No' %></div>
 </section>
+<button><a href="/players/<%= players.id %>/edit">Edit Player</a></button><br>
 
 <% if (players.comments.length) { %>
-    <table>
+    <table class="comments">
       <thead>
         <tr>
           <th>Date</th>
